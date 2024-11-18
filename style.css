@@ -1,0 +1,60 @@
+/* this file is loaded by index.html and styles the page */
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Libre Baskerville" , serif;
+  color: 473d2e;
+  margin: 2em 1em;
+  line-height: 1.5em;
+  background-color: #ffb1c2;
+  
+}
+
+h1 {
+  font-family: "Ballet", cursive;
+  max-width: calc(100% - 5rem);
+  line-height: 1.5em;
+  font-size: 10vw;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+.aesthetic-btn {
+  font-family: 'Libre Baskerville', cursive; /* A more elegant font for the button */
+  font-size: 1.2em;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #f6c6d2, #f1a7c5); /* Soft, pastel gradient */
+  border: 2px solid #f1a7c5; /* Matching border with the gradient */
+  border-radius: 50px; /* Rounded pill shape */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover */
+  text-align: center;
+  display: inline-block;
+  margin-top: 1em;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    
+}
+
+.aesthetic-btn:hover {
+  background: linear-gradient(135deg, #f1a7c5, #f6c6d2); /* Reverse gradient on hover */
+  color: white; /* Change text color on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.aesthetic-btn:active {
+  transform: scale(1); /* Reset scale on click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for click effect */
+}
+
+

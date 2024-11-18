@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A birthday card." />
+
+    <title>Happy Birthday!</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+  </head>
+  <body>
+    <section>
+      
+      <h1>
+        Happy Birthday!
+      </h1>
+      <p>
+        Cheers,
+      </p>
+      <p>
+        &lt;Your Name&gt;
+      </p>
+      <div class="button-container">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+            <button class="aesthetic-btn">Here's a button</button>
+        </a>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  </body>
+
+  <script>
+    var confettiOnLoad = true;
+    var scalar = 2;
+    var balloon = confetti.shapeFromText({ text: "🎈", scalar });
+    var cake = confetti.shapeFromText({ text: "🎂", scalar });
+
+    var defaults = {
+      spread: 360,
+      ticks: 60,
+      gravity: 0,
+      decay: 0.96,
+      startVelocity: 20,
+      shapes: [balloon, cake],
+      scalar,
+    };
+
+    function shoot(x = 0.5, y = 0.5) {
+      confetti({
+        ...defaults,
+        origin: { x: x, y: y },
+        particleCount: 30,
+      });
+
+      confetti({
+        ...defaults,
+        origin: { x: x, y: y },
+        particleCount: 5,
+        flat: true,
+      });
+
+      confetti({
+        ...defaults,
+        origin: { x: x, y: y },
+        particleCount: 15,
+        scalar: scalar / 2,
+        shapes: ["circle"],
+      });
+    }
+
+
+    if (confettiOnLoad) {
+        setTimeout(shoot, 0);
+        setTimeout(shoot, 100);
+        setTimeout(shoot, 200);
+    }
+
+    document.addEventListener("click", function (event) {
+      shoot(
+        event.clientX / window.innerWidth,
+        event.clientY / window.innerHeight
+      );
+    });
+  </script>
+</html>
